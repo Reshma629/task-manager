@@ -27,7 +27,7 @@ export default function useTasks() {
           }
           if (!cancelled) setTasks(parsedTasks)
         } else {
-          const response = await fetch('/tasks.json')
+          const response = await fetch(   `${import.meta.env.BASE_URL}tasks.json` )
           if (!response.ok) {
             throw new Error(`Could not load tasks.json (HTTP ${response.status}).`)
           }
